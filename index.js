@@ -10,7 +10,6 @@ const { sequelize, testConnection } = require("./config/database");
 const db = require("./models");
 
 // Configuración de Express
-const publicacionesRoutes = require("./routes/publicacionesRoutes");
 const userRoutes = require("./routes/userRoutes");
 const app = express();
 
@@ -21,7 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Aquí van las rutas
-app.use("/api", publicacionesRoutes);
 app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 3001;
